@@ -1,7 +1,7 @@
 # 使用 LCM 和 Tiled Diffusion & VAE 插件实现 NAI V3 生成图片精修与超分
 ***
 ## 概述
-本文使用SD WEBUI的 Tiled Diffusion & VAE 插件与LCM技术，实现了对NAI V3生成的图像的精修与超分。利用LCM技术和 Tiled Diffusion & VAE 插件，可以以较短的时间得到高质量的图片。
+本文使用 SD WEBUI 的 Tiled Diffusion & VAE 插件与LCM技术，实现了对NAI V3生成的图像的精修与超分。利用LCM技术和 Tiled Diffusion & VAE 插件，可以以较短的时间得到高质量的图片。
 ## NAI V3
 NAI V3 , 全称 Novel AI Anime Diffusion V3 ，是 Novel AI 在2023年11月14日正式发布的第三代 NAI Anime Diffusion 模型。该模型在 SDXL 基础上进行训练，是目前效果最为出色的 SDXL 二次元模型。  
 虽然只使用 NAI V3 可以获得非常好的图片，但是图片仍有许多肉眼可见的细节问题。同时，出于SDXL的底层设计和 NAI 的限制，得到的图片分辨率可能不是我们预期的大小。我们可以利用一些处理来对原图片进行精修和超分。  
