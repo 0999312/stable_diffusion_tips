@@ -1,5 +1,5 @@
 # 使用 LCM 和 Tiled Diffusion & VAE 插件实现 NAI V3 生成图片精修与超分
-
+***
 ## NAI V3
 NAI V3, 全程Novel AI Anime Diffusion V3，是Novel AI在2023年11月14日正式发布的第三代NAI Anime Diffusion模型。该模型在SDXL基础上进行训练，是目前效果最为出色的SDXL二次元画风模型。  
 虽然只使用NAI V3可以获得非常好的图片，但是图片仍有许多肉眼可见的细节问题。同时，出于底层设计和NAI提供的限制，得到的图片分辨率可能不是我们预期的大小。我们可以利用一些处理来对原图片进行精修和超分。  
@@ -73,12 +73,12 @@ Noise Inversion可以在高Denoising strength（尤其是超出推荐值）和�
 1. 使用该方法超分**基本会导致图片产生一定细节变化**，变化程度根据Denoising strength、放大倍数和其他参数共同决定。  
 2. 画面颜色与部分细节直接由VAE所控制，**可能会导致颜色差异**。效果见参考图。  
 3. 无法使用Inpainting模型进行超分。  
-
+***  
 ## 致谢名单
-1. Novel AI
+1. Novel AI  
 2. Pkuliyi2015 等人，开发了Tiled Diffusion & VAE 插件。
-3. LCM 以及 LCM LoRA 的贡献者们：  
+3. 青龙圣者，制作了Neg4All LoRA。  
+4. LCM 以及 LCM LoRA 的贡献者们：  
 <a href="https://github.com/luosiallen/latent-consistency-model/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=luosiallen/latent-consistency-model" />
-</a>
-4. 青龙圣者，制作了Neg4All LoRA。
+</a>  
