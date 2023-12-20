@@ -60,6 +60,8 @@ Noise Inversion 可以在高 Denoising strength（尤其是超出推荐值）和
 
 ## 参考图
 本文效果图使用的 Checkpoint 为作者个人融合的 FP16 未公开模型，VAE 为 Anythings VAE 。  
+推荐使用 TruePettanMix 进行修复，模型内自带的VAE效果也较为优秀。  
+地址：https://civitai.com/models/225839/truepettanmix  
 由于使用 Anythings VAE 的原因，图片的白底会变为灰底。可以使用 Blessed2 VAE 解决这个问题。  
 本文所使用的实验设备为 2021 年款联想拯救者 R9000P，GPU 为英伟达 RTX 3060 Laptop 6GB。Cross attention optimization 使用 SDP 。Token Merging ratio 为 0.4 ，Negative Guidance minimum sigma 为 0.5 。  
 原图如下图所示。  
