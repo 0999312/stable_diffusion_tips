@@ -26,6 +26,7 @@ https://www.bilibili.com/video/BV1Q94y1E7uc
 使用了来自青龙圣者的 Neg4All LoRA 和适用于 SD 1.5 的 LCM LoRA 。  
 Neg4All LoRA 地址：  
 https://civitai.com/models/102356/neg4allboth-positive-high-qualitydetails-and-negative-worse-qualitybad-hand-in-one-lora  
+似乎不使用 Neg4All LoRA 可以在一定地方得到更好的效果，未对比测试。  
 
 逆向提示词：  
 (worst quality, low quality:1.4),  
@@ -35,21 +36,27 @@ https://civitai.com/models/102356/neg4allboth-positive-high-qualitydetails-and-n
 CFG Scale： 1 ~ 1.5  
 使用LCM时CFG必须低于2，否则会导致烧图等现象。  
 
+采样步数：16  
+经过测试，16为最适且LCM采样完全的步数。合适的步数可以避免LCM一定程度的模糊问题。  
+
 Denoising strength：< 0.3  
 二倍放大时，Denoising strength 应当 < 0.25。  
 超出推荐值可能会导致图片被过度修改。  
+使用Noise Inversion时推荐参数为0.35。  
 
 Tiled Diffusion & VAE 插件参数：  
 参数如下图所示。  
 ![参数图](./imgs/parameters.png)  
 Latent Tile Size 应当根据您使用的 SD Checkpoint 进行调整。本文效果图使用的 SD Checkpoint 为作者个人融合的未公开模型，属于SD 1.5模型。  
 通常而言，您应当提前了解您使用的模型的最适分辨率，并将最适分辨率 / 8 得到 Latent Tile Size。  
+在SD1.5系列模型的推荐的潜空间大小是96，SDXL系列模型未验证。  
 Overlap 根据插件作者和其他使用者推荐，采用32或48是最为合适的大小。  
 Batch Size 请根据您的显存大小和放大倍数（Scale Factor）进行调整。  
 Upscaler 和 Scale Factor 应当保证最适匹配，例如 4X 的 Upscaler 应当使用 Scale Factor 4进行四倍放大而不是二倍放大。  
-Noise Inversion 可以在高 Denoising strength（尤其是超出推荐值）和高分辨率（根据插件作者描述，在8K分辨率下的情况）时产出更加忠于原图的结果图。但由于通常情况下我们无需8K级别分辨率的图像，所以仅在需要高还原度的情况下使用。
-根据热心用户的建议，对于二次元图像默认的配置已经是最适配置。可以通过提高 Retouch 来增强二次元画风的效果，最适值与实际原理尚未考证。  
-不建议在使用 LCM 进行加速时使用 Region Prompt Control 来进行局部修正。因为 LCM 会破坏生图质量，会直接导致被修补区域模糊。可以通过 Dynamic Thresholding 插件进行 CFG 修复进行一定程度弥补，但会导致显存需求更进一步提升。  
+Noise Inversion 可以在高 Denoising strength（尤其是超出推荐值）和高分辨率（根据插件作者描述，在8K分辨率下的情况）时产出更加忠于原图的结果图。但由于通常情况下我们无需8K级别分辨率的图像，所以仅在需要高还原度的情况下使用。  
+根据热心用户的建议，对于二次元图像默认的配置已经基本是最适配置。可以通过提高 Retouch 来增强二次元画风的效果，最适值推荐为Retouch 3。实际原理尚未考证。  
+不建议在使用 LCM 进行加速时使用 Region Prompt Control 来进行局部修正。因为 LCM 会破坏生图质量，会直接导致被修补区域模糊。对于原图效果极差的部分，使用完全采样的LCM步数理论上可以做到很大程度修复。  
+可以通过 Dynamic Thresholding 插件进行 CFG 修复进行一定程度弥补，但会导致显存需求更进一步提升。  
 
 ## 参考图
 本文效果图使用的 Checkpoint 为作者个人融合的 FP16 未公开模型，VAE 为 Anythings VAE 。  
