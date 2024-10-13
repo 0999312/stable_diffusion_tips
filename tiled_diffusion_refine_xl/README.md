@@ -10,7 +10,7 @@ NAI V3 , 全称 Novel AI Anime Diffusion V3 ，是 Novel AI 在2023年11月14日
 ## Tiled Diffusion & VAE 插件
 Tiled Diffusion & VAE 插件是由 Github 用户 pkuliyi2015 等人共同开发的 SD Webui 插件。该插件提供的功能相当丰富且实用。  
 本文只介绍我们主要使用的功能，且不会对具体原理进行讨论。  
-在WEBUI Forge当中，该插件已经被内置且取消了部分不必要功能。  
+在WEBUI Forge当中，该插件已经被内置且取消了部分不必要功能。**由于Forge内置的Tiled Diffusion插件不会跟原插件一样先进行超分，请提前使用Extra内的超分器进行超分**。  
 更多相关内容请阅读该 REPO 下的数个 Markdown 文档，以便您更好理解本文的内容甚至发现本文当中的不足之处。  
 Github Repo地址：  
 https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111  
